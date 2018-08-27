@@ -18,7 +18,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.galileo.android.tinderrecipes.R;
-import edu.galileo.android.tinderrecipes.RecipeMainActivity;
+import edu.galileo.android.tinderrecipes.recipemain.ui.RecipeMainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

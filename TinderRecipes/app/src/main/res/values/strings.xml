@@ -2,4 +2,10 @@
     <string name="app_name">TinderRecipes</string>
     <string name="login.error">Impossible to start session %s</string>
     <string name="login.cancel.error">Login canceled</string>
+
+    <string name="recipemain.error">Impossible to get information %s</string>
+    <string name="recipemain.notice.saved">Saved successfully</string>
+
+    <string name="recipemain.menu.action.list">Saved recipes</string>
+    <string name="global.menu.action.logout">Close session</string>
 </resources>

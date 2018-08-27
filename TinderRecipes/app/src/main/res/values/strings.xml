@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TinderRecipes</string>
+    <string name="login.error">Impossible to start session %s</string>
+    <string name="login.cancel.error">Login canceled</string>
 </resources>

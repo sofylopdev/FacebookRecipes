@@ -19,19 +19,18 @@ public class GlideImageLoader implements ImageLoader {
 
     @Override
     public void load(ImageView imageView, String URL) {
-        if(onFinishedLoadingListener != null) {
+        if (onFinishedLoadingListener != null) {
             glideRequestManager
                     .load(URL)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .centerCrop()
-                   .listener(onFinishedLoadingListener)
+                    .listener(onFinishedLoadingListener)
                     .into(imageView);
-        }else{
+        } else {
             glideRequestManager
                     .load(URL)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .centerCrop()
-                    //.override(600, 400)
                     .into(imageView);
         }
     }

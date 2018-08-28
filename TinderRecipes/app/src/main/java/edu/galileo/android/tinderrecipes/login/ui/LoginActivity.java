@@ -61,13 +61,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        AppEventsLogger.activateApp(this);
+        //AppEventsLogger.activateApp(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        AppEventsLogger.deactivateApp(this);
+       // AppEventsLogger.deactivateApp(this);
     }
 
     @Override

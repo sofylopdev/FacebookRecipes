@@ -25,6 +25,7 @@ import edu.galileo.android.tinderrecipes.RecipeListActivity;
 import edu.galileo.android.tinderrecipes.entities.Recipe;
 import edu.galileo.android.tinderrecipes.libs.base.ImageLoader;
 import edu.galileo.android.tinderrecipes.recipemain.RecipeMainPresenter;
+import edu.galileo.android.tinderrecipes.recipemain.di.RecipeMainComponent;
 
 public class RecipeMainActivity extends AppCompatActivity implements RecipeMainView {
 
@@ -44,6 +45,7 @@ public class RecipeMainActivity extends AppCompatActivity implements RecipeMainV
     private RecipeMainPresenter presenter;
     private Recipe currentRecipe;
     private ImageLoader imageLoader;
+    private RecipeMainComponent component;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +82,10 @@ public class RecipeMainActivity extends AppCompatActivity implements RecipeMainV
     }
 
     private void setupInjection() {
-
+        FacebookRecipesApp app = (FacebookRecipesApp) getApplication();
+        component = app.getRecipeMainComponent(this, this);
+        presenter = getPresenter();
+        imageLoader = getImageLoader();
     }
 
     @Override
@@ -95,13 +100,13 @@ public class RecipeMainActivity extends AppCompatActivity implements RecipeMainV
 
     @Override
     public void showUIElements() {
-        imgRecipe.setVisibility(View.VISIBLE);
+        //imgRecipe.setVisibility(View.VISIBLE);
         linearLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hidUIElements() {
-        imgRecipe.setVisibility(View.GONE);
+        //imgRecipe.setVisibility(View.GONE);
         linearLayout.setVisibility(View.GONE);
     }
 
@@ -168,5 +173,13 @@ public class RecipeMainActivity extends AppCompatActivity implements RecipeMainV
 
     private void navigateToListScreen() {
         startActivity(new Intent(this, RecipeListActivity.class));
+    }
+
+    public ImageLoader getImageLoader() {
+        return component.getImageLoader();
+    }
+
+    public RecipeMainPresenter getPresenter() {
+        return component.getPresenter();
     }
 }

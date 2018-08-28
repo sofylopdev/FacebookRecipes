@@ -46,8 +46,8 @@ public class LibsModule {
 
     @Provides
     @Singleton
-    RequestManager providesRequestManager(Fragment fragment){
-        return Glide.with(fragment);
+    RequestManager providesRequestManager(AppCompatActivity activity){
+        return Glide.with(activity);
     }
 
     @Provides

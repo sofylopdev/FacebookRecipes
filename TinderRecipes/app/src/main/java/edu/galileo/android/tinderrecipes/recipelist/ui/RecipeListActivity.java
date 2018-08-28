@@ -1,7 +1,9 @@
-package edu.galileo.android.tinderrecipes;
+package edu.galileo.android.tinderrecipes.recipelist.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import edu.galileo.android.tinderrecipes.R;
 
 public class RecipeListActivity extends AppCompatActivity {
 

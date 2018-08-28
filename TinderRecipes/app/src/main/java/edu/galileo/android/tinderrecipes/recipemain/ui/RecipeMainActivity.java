@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.galileo.android.tinderrecipes.FacebookRecipesApp;
 import edu.galileo.android.tinderrecipes.R;
-import edu.galileo.android.tinderrecipes.RecipeListActivity;
+import edu.galileo.android.tinderrecipes.recipelist.ui.RecipeListActivity;
 import edu.galileo.android.tinderrecipes.entities.Recipe;
 import edu.galileo.android.tinderrecipes.libs.base.ImageLoader;
 import edu.galileo.android.tinderrecipes.recipemain.RecipeMainPresenter;

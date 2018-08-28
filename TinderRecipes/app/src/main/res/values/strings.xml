@@ -8,4 +8,5 @@
 
     <string name="recipemain.menu.action.list">Saved recipes</string>
     <string name="global.menu.action.logout">Close session</string>
+    <string name="recipemain.menu.action.main">Choose a recipe</string>
 </resources>

@@ -9,6 +9,12 @@ import com.raizlabs.android.dbflow.config.FlowManager;
 
 import edu.galileo.android.tinderrecipes.libs.di.LibsModule;
 import edu.galileo.android.tinderrecipes.login.ui.LoginActivity;
+import edu.galileo.android.tinderrecipes.recipelist.di.DaggerRecipeListComponent;
+import edu.galileo.android.tinderrecipes.recipelist.di.RecipeListComponent;
+import edu.galileo.android.tinderrecipes.recipelist.di.RecipeListModule;
+import edu.galileo.android.tinderrecipes.recipelist.ui.RecipeListActivity;
+import edu.galileo.android.tinderrecipes.recipelist.ui.RecipeListView;
+import edu.galileo.android.tinderrecipes.recipelist.ui.adapters.OnItemClickListener;
 import edu.galileo.android.tinderrecipes.recipemain.di.DaggerRecipeMainComponent;
 import edu.galileo.android.tinderrecipes.recipemain.di.RecipeMainComponent;
 import edu.galileo.android.tinderrecipes.recipemain.di.RecipeMainModule;
@@ -56,6 +62,14 @@ public class FacebookRecipesApp extends Application {
                 .builder()
                 .libsModule(new LibsModule(activity))
                 .recipeMainModule(new RecipeMainModule(view))
+                .build();
+    }
+
+    public RecipeListComponent getRecipeListComponent(RecipeListActivity activity, RecipeListView view, OnItemClickListener listener){
+        return DaggerRecipeListComponent
+                .builder()
+                .libsModule(new LibsModule(activity))
+                .recipeListModule(new RecipeListModule(view, listener))
                 .build();
     }
 }

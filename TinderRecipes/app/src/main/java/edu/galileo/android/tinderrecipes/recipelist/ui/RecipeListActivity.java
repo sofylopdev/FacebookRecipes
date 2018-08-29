@@ -10,6 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bumptech.glide.Glide;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
@@ -18,7 +22,10 @@ import butterknife.OnClick;
 import edu.galileo.android.tinderrecipes.FacebookRecipesApp;
 import edu.galileo.android.tinderrecipes.R;
 import edu.galileo.android.tinderrecipes.entities.Recipe;
+import edu.galileo.android.tinderrecipes.libs.GlideImageLoader;
+import edu.galileo.android.tinderrecipes.libs.base.ImageLoader;
 import edu.galileo.android.tinderrecipes.recipelist.RecipeListPresenter;
+import edu.galileo.android.tinderrecipes.recipelist.events.RecipeListEvent;
 import edu.galileo.android.tinderrecipes.recipelist.ui.adapters.OnItemClickListener;
 import edu.galileo.android.tinderrecipes.recipelist.ui.adapters.RecipesAdapter;
 import edu.galileo.android.tinderrecipes.recipemain.ui.RecipeMainActivity;

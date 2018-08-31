@@ -36,11 +36,15 @@ ext {
     supportLibraryVersion = '27.1.1'
 
     retrofitVersion = '2.4.0'
-    dbflowVersion = '4.2.3'
+    dbflowVersion = '4.2.4'
     butterknifeVersion = '8.8.1'
     facebookVersion = '[4,5)'
     eventbusVersion = '3.0.0'
     daggerVersion = '2.16'
-    glideVersion = '4.7.1'
+    glideVersion = '3.6.1'
     jsr250Version = '1.0'
+
+    robolectricVersion = '3.8'
+    mockitoVersion = '1.10.19'
+    junitVersion = '4.12'
 }

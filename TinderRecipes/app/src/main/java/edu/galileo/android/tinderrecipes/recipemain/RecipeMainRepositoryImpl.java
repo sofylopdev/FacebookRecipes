@@ -1,7 +1,5 @@
 package edu.galileo.android.tinderrecipes.recipemain;
 
-import android.util.Log;
-
 import java.util.Random;
 
 import edu.galileo.android.tinderrecipes.BuildConfig;
@@ -29,31 +27,25 @@ public class RecipeMainRepositoryImpl implements RecipeMainRepository {
     public void getNextRecipe() {
         Call<RecipeSearchResponse> call = service.search(BuildConfig.FOOD_API_KEY,
                 RECENT_SORT, COUNT, recipePage);
-        Log.d("Repository", service.search(BuildConfig.FOOD_API_KEY,
-                RECENT_SORT, COUNT, recipePage).toString());
+//        Log.d("Repository", service.search(BuildConfig.FOOD_API_KEY,
+//                RECENT_SORT, COUNT, recipePage).toString());
         call.enqueue(new Callback<RecipeSearchResponse>() {
             @Override
             public void onResponse(Call<RecipeSearchResponse> call, Response<RecipeSearchResponse> response) {
                 if (response.isSuccessful()) {
                     RecipeSearchResponse recipeSearchResponse = response.body();
-                    Log.d("Repository", "Got a successfull response");
                     if (recipeSearchResponse.getCount() == 0) {  //the number that i sent as a page is invalid
-                        Log.d("Repository", "Count is zero");
                         setRecipePage(new Random(RECIPE_RANGE).nextInt());
                         getNextRecipe();
                     } else {
-                        Log.d("Repository", "Count NOT zero");
                         Recipe recipe = recipeSearchResponse.getFirstRecipe();
                         if (recipe != null) {
-                            Log.d("Repository", "Posting the recipe");
                             post(recipe);
-                        }else{
-                            Log.d("Repository", "Posting the error");
-                           post(response.message());
+                        } else {
+                            post(response.message());
                         }
                     }
                 } else {
-                    Log.d("Repository", "Got UNsuccessfull response");
                     post(response.message());
                 }
             }
@@ -73,7 +65,6 @@ public class RecipeMainRepositoryImpl implements RecipeMainRepository {
 
     @Override
     public void setRecipePage(int recipePage) {
-        Log.d("Repository", "next page: "+ recipePage);
         this.recipePage = recipePage;
     }
 

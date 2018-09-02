@@ -31,9 +31,9 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeListV
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
-   private RecipesAdapter adapter;
-   private RecipeListPresenter presenter;
-   private RecipeListComponent component;
+    private RecipesAdapter adapter;
+    private RecipeListPresenter presenter;
+    private RecipeListComponent component;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

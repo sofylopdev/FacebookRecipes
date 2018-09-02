@@ -53,7 +53,7 @@ public class RecipesAdapterTest extends BaseTest {
     private RecipesAdapter adapter;
     private ShadowRecyclerViewAdapter shadowAdapter;
 
-    public static final String  RECIPE_URL = "http://galileo.edu";
+    public static final String RECIPE_URL = "http://galileo.edu";
 
     @Override
     public void setUp() throws Exception {

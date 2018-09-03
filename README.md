@@ -1,2 +1,2 @@
 # FacebookRecipes
-Third lesson from Professional Android App Development Course from edX/GalileoX
+Third and fifth lessons from Professional Android App Development Course from edX/GalileoX
